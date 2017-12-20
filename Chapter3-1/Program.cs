@@ -14,9 +14,16 @@ namespace Chapter3_1
             var exists = numbers.Exists(s => s % 8 == 0 || s % 9 == 0);
             numbers.ForEach(s => Console.WriteLine(s / 2));
             Console.WriteLine(exists);
+
             var tes = numbers.Where(s => s > 50);
             foreach (var n in tes)
                 Console.Write($"{n} ");
+
+            var test =numbers.Select(s =>s.ToString());
+            numbers.ForEach(s => Console.Write(s*2 + ","));
+
+            var tests = numbers.Select(s => s*2).ToList();
+            tests.ForEach(s => Console.Write(s+" "));
 
             // 3.1.1
             Exercise1_1(numbers);
